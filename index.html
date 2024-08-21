@@ -11,57 +11,6 @@
     <title>Document</title>
   </head>
   <body class="h-screen bg-blue-500 flex items-center justify-center">
-    <!-- <div class="w-[350px] p-7 bg-white shadow-md rounded-md">
-      <label
-        for="email"
-        class="block mb-1 text-slate-700 font-medium font-poppins"
-        >Email</label
-      >
-      <input
-        id="email"
-        value="example$gmail."
-        class="peer w-full h-12 border border-slate-200 rounded-md text-zinc-700 font-poppins font-medium px-3"
-        type="email"
-        required
-      />
-
-      <div class="mt-2 hidden peer-invalid:block">
-        <div class="flex items-center gap-1">
-          <div class="w-4 fill-rose-500">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              id="Outline"
-              viewBox="0 0 24 24"
-            >
-              <path
-                d="M12,0A12,12,0,1,0,24,12,12.013,12.013,0,0,0,12,0Zm0,22A10,10,0,1,1,22,12,10.011,10.011,0,0,1,12,22Z"
-              />
-              <path d="M12,5a1,1,0,0,0-1,1v8a1,1,0,0,0,2,0V6A1,1,0,0,0,12,5Z" />
-              <rect x="11" y="17" width="2" height="2" rx="1" />
-            </svg>
-          </div>
-          <p class="text-rose-500 font-poppins">Invalid email address</p>
-        </div>
-      </div>
-
-      <div class="mt-2 block peer-invalid:hidden">
-        <div class="flex items-center gap-1">
-          <div class="w-4 fill-green-500">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              id="Layer_1"
-              data-name="Layer 1"
-              viewBox="0 0 24 24"
-            >
-              <path
-                d="m16.298,8.288l1.404,1.425-5.793,5.707c-.387.387-.896.58-1.407.58s-1.025-.195-1.416-.585l-2.782-2.696,1.393-1.437,2.793,2.707,5.809-5.701Zm7.702,3.712c0,6.617-5.383,12-12,12S0,18.617,0,12,5.383,0,12,0s12,5.383,12,12Zm-2,0c0-5.514-4.486-10-10-10S2,6.486,2,12s4.486,10,10,10,10-4.486,10-10Z"
-              />
-            </svg>
-          </div>
-          <p class="text-green-500 font-poppins">Valid email address</p>
-        </div>
-      </div>
-    </div> -->
     <div
       class="w-11/12 sm:w-[400px] bg-white p-5 font-poppins rounded-md shadow-xl"
     >
@@ -189,6 +138,64 @@
         </button>
       </form>
     </div>
-    <script src="js/script.js"></script>
+    <script>
+      const form = document.querySelector("form"),
+        email = form.querySelector("#email"),
+        create_pw = form.querySelector("#create_pw"),
+        confirm_pw = form.querySelector("#confirm_pw"),
+        eyeIcon = form.querySelector("#eyeIcon"),
+        submit = form.querySelector("#submit"),
+        error = form.querySelectorAll("#error");
+
+      eyeIcon.addEventListener("click", function () {
+        if (create_pw.type === "password" && confirm_pw.type === "password") {
+          create_pw.type = "text";
+          confirm_pw.type = "text";
+          eyeIcon.classList.replace("fa-eye-slash", "fa-eye");
+        } else {
+          create_pw.type = "password";
+          confirm_pw.type = "password";
+          eyeIcon.classList.replace("fa-eye", "fa-eye-slash");
+        }
+      });
+
+      function checkEmail() {
+        const pattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+        if (!email.value.match(pattern)) {
+          return error[0].classList.replace("hidden", "block");
+        } else {
+          error[0].classList.replace("block", "hidden");
+        }
+      }
+      function createPassword() {
+        // const passPattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/ ;
+        const count = 8;
+
+        if (create_pw.value.length < count) {
+          return error[1].classList.replace("hidden", "block");
+        } else {
+          error[1].classList.replace("block", "hidden");
+        }
+      }
+
+      function confirmPassword() {
+        if (create_pw.value !== confirm_pw.value || confirm_pw.value === "") {
+          return error[2].classList.replace("hidden", "block");
+        } else {
+          error[2].classList.replace("block", "hidden");
+        }
+      }
+
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+        checkEmail();
+        createPassword();
+        confirmPassword();
+
+        email.addEventListener("keyup", checkEmail);
+        create_pw.addEventListener("keyup", createPassword);
+        confirm_pw.addEventListener("keyup", confirmPassword);
+      });
+    </script>
   </body>
 </html>
