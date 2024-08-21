@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://kit.fontawesome.com/7488918404.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="./css/tailwind.css" />
+    <title>Document</title>
+  </head>
+  <body class="h-screen bg-blue-500 flex items-center justify-center">
+    <!-- <div class="w-[350px] p-7 bg-white shadow-md rounded-md">
+      <label
+        for="email"
+        class="block mb-1 text-slate-700 font-medium font-poppins"
+        >Email</label
+      >
+      <input
+        id="email"
+        value="example$gmail."
+        class="peer w-full h-12 border border-slate-200 rounded-md text-zinc-700 font-poppins font-medium px-3"
+        type="email"
+        required
+      />
+
+      <div class="mt-2 hidden peer-invalid:block">
+        <div class="flex items-center gap-1">
+          <div class="w-4 fill-rose-500">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              id="Outline"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M12,0A12,12,0,1,0,24,12,12.013,12.013,0,0,0,12,0Zm0,22A10,10,0,1,1,22,12,10.011,10.011,0,0,1,12,22Z"
+              />
+              <path d="M12,5a1,1,0,0,0-1,1v8a1,1,0,0,0,2,0V6A1,1,0,0,0,12,5Z" />
+              <rect x="11" y="17" width="2" height="2" rx="1" />
+            </svg>
+          </div>
+          <p class="text-rose-500 font-poppins">Invalid email address</p>
+        </div>
+      </div>
+
+      <div class="mt-2 block peer-invalid:hidden">
+        <div class="flex items-center gap-1">
+          <div class="w-4 fill-green-500">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              id="Layer_1"
+              data-name="Layer 1"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="m16.298,8.288l1.404,1.425-5.793,5.707c-.387.387-.896.58-1.407.58s-1.025-.195-1.416-.585l-2.782-2.696,1.393-1.437,2.793,2.707,5.809-5.701Zm7.702,3.712c0,6.617-5.383,12-12,12S0,18.617,0,12,5.383,0,12,0s12,5.383,12,12Zm-2,0c0-5.514-4.486-10-10-10S2,6.486,2,12s4.486,10,10,10,10-4.486,10-10Z"
+              />
+            </svg>
+          </div>
+          <p class="text-green-500 font-poppins">Valid email address</p>
+        </div>
+      </div>
+    </div> -->
+    <div
+      class="w-11/12 sm:w-[400px] bg-white p-5 font-poppins rounded-md shadow-xl"
+    >
+      <h1
+        class="text-3xl font-semibold relative after:absolute after:w-6 after:h-1 after:bg-blue-500 after:bottom-0 after:left-0"
+      >
+        Login
+      </h1>
+      <form action="#" class="flex flex-col gap-5 mt-8">
+        <div>
+          <p class="block mb-1 text-slate-700 text-sm font-medium">Email</p>
+          <div>
+            <input
+              id="email"
+              type="email"
+              class="w-full h-14 border outline-none rounded-md text-slate-700 px-3 sm:p-5"
+              placeholder="Enter email address"
+            />
+          </div>
+          <div id="error" class="hidden">
+            <span class="flex items-center gap-2 mt-2">
+              <div class="w-3 fill-red-600">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  id="Outline"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M12,0A12,12,0,1,0,24,12,12.013,12.013,0,0,0,12,0Zm0,22A10,10,0,1,1,22,12,10.011,10.011,0,0,1,12,22Z"
+                  />
+                  <path
+                    d="M12,5a1,1,0,0,0-1,1v8a1,1,0,0,0,2,0V6A1,1,0,0,0,12,5Z"
+                  />
+                  <rect x="11" y="17" width="2" height="2" rx="1" />
+                </svg>
+              </div>
+              <p class="text-sm text-red-600">Invalid email address</p>
+            </span>
+          </div>
+        </div>
+
+        <div>
+          <p class="block mb-1 text-slate-700 text-sm font-medium">
+            Create Password
+          </p>
+          <div class="relative h-14">
+            <input
+              id="create_pw"
+              type="password"
+              class="w-full h-full border outline-none rounded-md text-slate-700 px-3 sm:p-5"
+              placeholder="Enter email address"
+            />
+          </div>
+          <div id="error" class="hidden">
+            <span class="flex items-start gap-2 mt-2">
+              <div class="w-3 fill-red-600 mt-1.5">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  id="Outline"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M12,0A12,12,0,1,0,24,12,12.013,12.013,0,0,0,12,0Zm0,22A10,10,0,1,1,22,12,10.011,10.011,0,0,1,12,22Z"
+                  />
+                  <path
+                    d="M12,5a1,1,0,0,0-1,1v8a1,1,0,0,0,2,0V6A1,1,0,0,0,12,5Z"
+                  />
+                  <rect x="11" y="17" width="2" height="2" rx="1" />
+                </svg>
+              </div>
+              <p class="text-sm text-red-600">
+                password must be at least 8 characters long, <br />
+                contain at least one number
+              </p>
+            </span>
+          </div>
+        </div>
+
+        <div>
+          <p class="block mb-1 text-slate-700 text-sm font-medium">
+            Confirm Password
+          </p>
+          <div class="relative h-14">
+            <input
+              id="confirm_pw"
+              type="password"
+              class="w-full h-full border outline-none rounded-md text-slate-700 px-3 sm:p-5"
+              placeholder="Enter email address"
+            />
+            <i
+              id="eyeIcon"
+              class="fa-regular fa-eye-slash absolute cursor-pointer w-7 h-7 flex items-center justify-center rounded-full hover:bg-slate-100 top-1/2 -translate-y-1/2 right-3 sm:right-5 text-zinc-500"
+            ></i>
+          </div>
+          <div id="error" class="hidden">
+            <span class="flex items-start gap-2 mt-2">
+              <div class="w-3 fill-red-600 mt-1">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  id="Outline"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M12,0A12,12,0,1,0,24,12,12.013,12.013,0,0,0,12,0Zm0,22A10,10,0,1,1,22,12,10.011,10.011,0,0,1,12,22Z"
+                  />
+                  <path
+                    d="M12,5a1,1,0,0,0-1,1v8a1,1,0,0,0,2,0V6A1,1,0,0,0,12,5Z"
+                  />
+                  <rect x="11" y="17" width="2" height="2" rx="1" />
+                </svg>
+              </div>
+              <p class="text-sm text-red-600">
+                Password and confirm password does <br />
+                not match
+              </p>
+            </span>
+          </div>
+        </div>
+
+        <button
+          id="submit"
+          class="bg-blue-500 text-white h-14 font-medium text-lg"
+        >
+          Regestration
+        </button>
+      </form>
+    </div>
+    <script src="./js/script.js"></script>
+  </body>
+</html>
